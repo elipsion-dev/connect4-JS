@@ -1,0 +1,61 @@
+body {
+  background-color: black;
+}
+#game{
+  position: absolute;
+  top: 13%;
+  left: 25%;
+}
+#win{
+  position: absolute;
+  top: 5%;
+  left: 26.5%;
+}
+table, output {
+  box-shadow: .5vh .5vh 2vh .5vh rgba( 0, 0, 0, .5 );
+}
+table {
+  width: 90vh;
+  border-collapse: collapse;
+  border: 2vh solid royalblue;
+}
+td {
+  width: calc( 90vh / 7 );
+  background: royalblue;
+  cursor: default;
+  user-select: none;
+}
+td:before {
+  content: "";
+  display: block;
+  width: calc( 90vh / 7 );
+  height: calc( 90vh / 7 );
+  border-radius: 50%;
+  box-shadow: inset .5vh .5vh 2vh .5vh rgba( 0, 0, 0, .5 );
+  background: white;
+}
+td.red:before {
+  background: red;
+}
+td.yellow:before {
+  background: yellow;
+}
+output {
+  position: fixed;
+  display: none;
+  width: 90vh;
+  height: 10vh;
+  top: 10vh;
+  left: 5vh;
+  background: white;
+  text-align: center;
+  font: 5vh sans-serif;
+  line-height: 10vh;
+  cursor: pointer;
+}
+output:before {
+  content: attr( class );
+}
+output.red, output.yellow {
+  display: block;
+}
